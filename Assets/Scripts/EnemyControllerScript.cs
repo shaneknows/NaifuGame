@@ -15,11 +15,11 @@ public class EnemyControllerScript : MonoBehaviour {
 	void FixedUpdate () {
 		Run();
 		Attack();
-		if(renderer.isVisible)
+		if(GetComponent<Renderer>().isVisible)
 		{
 			hasAppeared = true;
 		}
-		else if(hasAppeared && !renderer.isVisible && gameObject != null)
+		else if(hasAppeared && !GetComponent<Renderer>().isVisible && gameObject != null)
 		{
 			DestroyObject(gameObject);
 		}

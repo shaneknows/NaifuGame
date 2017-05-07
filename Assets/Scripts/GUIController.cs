@@ -8,8 +8,8 @@ public class GUIController : MonoBehaviour {
 
 	void Start () {
 		anim = GetComponent<Animator>();
-		Camera.main.audio.mute = true;
-		Camera.main.audio.Pause();
+		Camera.main.GetComponent<AudioSource>().mute = true;
+		Camera.main.GetComponent<AudioSource>().Pause();
 	}
 
 	void OnMouseDown(){
@@ -25,7 +25,7 @@ public class GUIController : MonoBehaviour {
 		Destroy(gameObject);
 		if(GameObject.FindGameObjectsWithTag("Title").Length != 0)
 			DestroyObject(GameObject.FindGameObjectsWithTag("Title")[0]);
-		Camera.main.audio.mute = false;
-		Camera.main.audio.Play();
+		Camera.main.GetComponent<AudioSource>().mute = false;
+		Camera.main.GetComponent<AudioSource>().Play();
 	}
 }

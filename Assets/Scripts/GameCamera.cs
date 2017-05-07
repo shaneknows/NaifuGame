@@ -30,7 +30,7 @@ public class GameCamera : MonoBehaviour {
 		Instantiate(startButton.gameObject, new Vector3(startButton.position.x, startButton.position.y), Quaternion.identity);
 		//Create Grounds
 		Instantiate(ground.gameObject, new Vector3(0, ground.position.y), Quaternion.identity);
-		Instantiate(ground.gameObject, new Vector3(Globals.Instance.RightX + (ground.renderer.bounds.size.x/2), ground.position.y), Quaternion.identity);
+		Instantiate(ground.gameObject, new Vector3(Globals.Instance.RightX + (ground.GetComponent<Renderer>().bounds.size.x/2), ground.position.y), Quaternion.identity);
 
 		//Background
 		Instantiate(background);
@@ -78,7 +78,7 @@ public class GameCamera : MonoBehaviour {
 		Globals.Instance.LeftX = Camera.main.ViewportToWorldPoint(new Vector3(0,0,0)).x;
 		Globals.Instance.RightX = Camera.main.ViewportToWorldPoint(new Vector3(1,0,0)).x;
 
-		Globals.Instance.CharacterPosition = new Vector2(Globals.Instance.LeftX + character.renderer.bounds.size.x,
+		Globals.Instance.CharacterPosition = new Vector2(Globals.Instance.LeftX + character.GetComponent<Renderer>().bounds.size.x,
 		                                                 character.position.y);
 
 		List<GameObject> obstacles = new List<GameObject>();

@@ -18,11 +18,11 @@ public class Parallaxed : MonoBehaviour {
 	}
 
 	void FixedUpdate() {
-		if(renderer.isVisible)
+		if(GetComponent<Renderer>().isVisible)
 		{
 			hasAppeared = true;
 		}
-		else if(hasAppeared && !renderer.isVisible && gameObject != null)
+		else if(hasAppeared && !GetComponent<Renderer>().isVisible && gameObject != null)
 			Parallax();
 	}
 
@@ -39,6 +39,6 @@ public class Parallaxed : MonoBehaviour {
 
 	private void Parallax()
 	{
-		gameObject.transform.position = new Vector3(Globals.Instance.RightX + (gameObject.renderer.bounds.size.x/2) , gameObject.transform.position.y, 0);
+		gameObject.transform.position = new Vector3(Globals.Instance.RightX + (gameObject.GetComponent<Renderer>().bounds.size.x/2) , gameObject.transform.position.y, 0);
 	}
 }

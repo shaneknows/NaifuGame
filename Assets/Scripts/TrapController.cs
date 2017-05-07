@@ -15,7 +15,7 @@ public class TrapController : EnemyControllerScript {
 		if(collision.tag == "Player")
 		{
 			anim.SetBool("Collision", true);
-			audio.Play();
+			GetComponent<AudioSource>().Play();
 		}
 	}
 
